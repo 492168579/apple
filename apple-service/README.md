@@ -7,3 +7,9 @@ apple-service    是一个springCould  项目分为
          apple-eureka     8002  服务注册机
 
          apple-auth       8003  授权管理
+         
+         
+         
+         
+         
+         参考资料：  https://projects.spring.io/spring-security-oauth/docs/oauth2.html
