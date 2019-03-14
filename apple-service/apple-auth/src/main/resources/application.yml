@@ -1,0 +1,13 @@
+server:
+  port: 8003
+  servlet:
+    context-path: /apple-auth
+spring:
+  application:
+    name: apple-auth
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:passwd123@localhost:8002/apple-eureka/eureka
+  instance:
+    prefer-ip-address: true

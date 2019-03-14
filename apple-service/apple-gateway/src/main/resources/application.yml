@@ -1,0 +1,51 @@
+server:
+  port: 8001
+#  servlet:
+#   context-path: /apple-service   添加context-path 不起作用，后期学习解决
+spring:
+  security:
+    oauth2:
+      client:
+        client-id: acme
+        client-secret: secret
+      
+          
+  application:
+    name: apple-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lowerCaseServiceId: true
+      routes:
+      - id: apple-auth
+        uri: lb://APPLE-AUTH
+        predicates:
+          - Path=/auth/**
+        filters:
+          - StripPrefix=1
+      - id: apple-websocket
+        uri: lb:ws://APPLE-WEBSOCKET
+        predicates:
+          - Path=/websocket/**
+        filters:
+          - StripPrefix=1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:passwd123@localhost:8002/apple-eureka/eureka
+  instance:
+    prefer-ip-address: true
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
+    org.springframework.cloud.gateway: TRACE
+    
+      
+      
+      

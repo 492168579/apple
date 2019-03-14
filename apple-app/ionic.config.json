@@ -1,0 +1,8 @@
+{
+  "name": "apple",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: apple-eureka
+  security:
+    user:
+      name: user
+      password: passwd123
+server:
+  port: 8002
+  servlet:
+    context-path: /apple-eureka
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone : http://user:passwd123@localhost:8002/eureka
+logging:
+    file: ./eureka/log.log
+    level:
+         root: info
+        
