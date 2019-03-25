@@ -8,6 +8,8 @@ apple-service    是一个springCould  项目分为
 
          apple-auth       8003  授权管理
          
+         apple-generator  8004  代码生成器
+         
          
          
          

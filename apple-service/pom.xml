@@ -13,6 +13,7 @@
 		<module>apple-auth</module>
 		<module>apple-eureka</module>
 		<module>apple-websocket</module>
+		<module>apple-generator</module>
 	</modules>
 
 	<properties>
@@ -46,7 +47,21 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper-spring-boot-starter</artifactId>
+				<version>1.2.3</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.6</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<dependencies>
@@ -84,7 +99,7 @@
 					<source>1.8</source>
 					<target>1.8</target>
 					<encoding>UTF-8</encoding><!-- 字符集编码 -->
-                    <skipTests>true</skipTests><!-- 跳过测试 -->    
+					<skipTests>true</skipTests><!-- 跳过测试 -->
 				</configuration>
 			</plugin>
 		</plugins>
