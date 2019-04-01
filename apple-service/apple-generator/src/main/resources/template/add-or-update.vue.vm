@@ -56,12 +56,12 @@
             this.$http({
               url: #[[this.$http.adornUrl]]#(`/${moduleName}/${pathName}/info/#[[$]]#{this.dataForm.${pk.attrname}}`),
               method: 'get',
-              #[[params: this.$http.adornParams()]]#
+              #[[data: this.$http.adornParams()]]#
             }).then(({data}) => {
               if (data && data.code === 0) {
 #foreach($column in $columns)
 #if($column.columnName != $pk.columnName)
-                this.dataForm.${column.attrname} = data.${pathName}.${column.attrname}
+                this.dataForm.${column.attrname} = data.data.${column.attrname}
 #end
 #end
               }

@@ -1,0 +1,77 @@
+package ${package}.${moduleName}.vo;
+import java.util.Date;
+import ${package}.${moduleName}.entity.${className}Entity;
+
+
+/**
+ * ${comments}
+ * 
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+public class ${className}VO extends ${className}Entity {
+	private static final long serialVersionUID = 1L;
+#foreach ($column in $columns)
+	 #if(${column.attrType} == 'Date')
+	 	/**
+	 * ${column.comments}查询开始时间
+	 */
+	 private String ${column.attrname}Start;
+	 /**
+	 * ${column.comments}查询结束时间
+	 */
+	 private String ${column.attrname}End;
+	 #end
+	 #if(${column.comments.indexOf("type_key")}!=-1)
+	  /**
+	 * ${column.comments}翻译
+	 */
+	   private ${column.attrType} ${column.attrname}Name;
+	 #end
+#end
+
+#foreach ($column in $columns)
+    #if($column.attrType == 'Date')
+	/**
+	 * 设置：${column.comments}查询开始时间
+	 */
+	public void set${column.attrName}Start(String ${column.attrname}Start) {
+		this.${column.attrname}Start = ${column.attrname}Start;
+	}
+	/**
+	 * 获取：${column.comments}查询开始时间
+	 */
+	public String get${column.attrName}Start() {
+		return ${column.attrname}Start;
+	}
+	/**
+	 * 设置：${column.comments}查询结束时间
+	 */
+	public void set${column.attrName}End (String ${column.attrname}End) {
+		this.${column.attrname}End = ${column.attrname}End;
+	}
+	/**
+	 * 获取：${column.comments}查询结束时间
+	 */
+	public String get${column.attrName}End() {
+		return ${column.attrname}End;
+	}
+	 #end
+	  #if(${column.comments.indexOf("type_key")}!=-1)
+	/**
+	 * 设置：${column.comments}翻译
+	 */
+	public void set${column.attrName}Name (${column.attrType} ${column.attrname}Name) {
+		this.${column.attrname}Name = ${column.attrname}Name;
+	}
+	/**
+	 * 获取：${column.comments}翻译
+	 */
+	public ${column.attrType} get${column.attrName}Name() {
+		return ${column.attrname}Name;
+	}
+	 #end
+#end
+
+}

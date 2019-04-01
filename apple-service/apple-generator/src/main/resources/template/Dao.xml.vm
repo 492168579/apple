@@ -2,31 +2,188 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="${package}.${moduleName}.dao.${className}Dao">
-
 	<!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="${package}.${moduleName}.entity.${className}Entity" id="${classname}Map">
+    <resultMap type="${package}.${moduleName}.entity.${className}Entity" id="${className}EntityMap">
 #foreach($column in $columns)
-        <result property="${column.attrname}" column="${column.columnName}"/>
+        <result property="${column.attrname}" jdbcType="${column.dataType}"  column="${column.columnName}"/>
 #end
     </resultMap>
-    
-	<select id="list" parameterType="java.lang.String"  resultMap="${classname}Map">
-		SELECT
+    	<resultMap extends="${className}EntityMap" id="${className}VOMap"  type="${package}.${moduleName}.vo.${className}VO">
+		#foreach($column in $columns)
+		      #if(${column.comments.indexOf("type_key")}!=-1)
+		        <result property="${column.attrname}Name" jdbcType="VARCHAR"  column="${column.attrname}Name"/>
+		      #end
+		#end    	
+	</resultMap>
+    	<sql id="${className}EntityColumnList">
+#foreach($column in $columns)
+   #if ($velocityCount  < $columns.size()) 
+     a.${column.columnName},
+   #else
+     a.${column.columnName}
+   #{end}
+#end
+	</sql>
+	<sql id="${className}VOColumnList">
+	 #foreach($column in $columns)
+			 #if(${column.comments.indexOf("type_key")}!=-1)
+			    #set($i=$column.comments.indexOf("=")+1)
+			   , ( SELECT  dictionary_value b  FROM  sys_dictionary b  WHERE  b.dictionary_key = a.${column.columnName}  AND b.type_key = '${column.comments.substring($i)}' ) ${column.attrname}Name
+		      #end
+	  #end
+	</sql>
+    <sql id="${className}EntitySearchParam">
         #foreach($column in $columns)
-         "${column.columnName}
-        #end
-		FROM
-		so_commont w
-		WHERE 1=1
-		<if test="soCommontId != null">
-			AND w.so_commont_id = #{soCommontId}
+   	<if test="${column.attrname} != null and ${column.attrname} !=''">
+			and a.${column.columnName} = #{${column.attrname}}
 		</if>
+        #end
+    </sql>
+    <sql id="${className}VOSearchParam">
+        #foreach($column in $columns)
+            #if(${column.attrType} == 'Date')
+              <if test="${column.attrname}Start !=null and ${column.attrname}Start !='' ">
+                  <![CDATA[ and a.${column.columnName}  >=  #{${column.attrname}Start}  ]]>
+              </if>
+              <if test="${column.attrname}End !=null and ${column.attrname}End !='' ">
+                  <![CDATA[ and a.${column.columnName}  <=  #{${column.attrname}End}  ]]>
+              </if>
+		   #end
+        #end
+    </sql>
+    
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.${pk.attrType}">
+		delete from
+		${tableName}
+		where ${pk.columnName}  = #{${pk.attrname},jdbcType=${pk.dataType}}
+	</delete>
+	<insert id="insert" parameterType="${package}.${moduleName}.entity.${className}Entity">
+		insert into ${tableName} (
+		#foreach($column in $columns)
+   #if ($velocityCount  < $columns.size()) 
+     ${column.columnName},
+   #else
+     ${column.columnName}
+   #{end}
+  #end
+		)
+		values (
+#foreach($column in $columns)
+   #if ($velocityCount  < $columns.size()) 
+     #{${column.attrname},jdbcType=${column.dataType}},
+   #else
+      #{${column.attrname},jdbcType=${column.dataType}}
+   #{end}
+  #end
+		)
+	</insert>
+    <insert id="insertSelective" parameterType="${package}.${moduleName}.entity.${className}Entity">
+		insert into ${tableName}
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			#foreach($column in $columns)
+			   #if ($velocityCount  < $columns.size()) 
+			      #if(${column.attrType} == 'Date')
+			     <if test="${column.attrname} != null">
+			      #else
+			     <if test="${column.attrname} != null and ${column.attrname} !=''">
+			     #end 
+				${column.columnName},
+			</if>
+			   #else
+                 #if(${column.attrType} == 'Date')
+			     <if test="${column.attrname} != null">
+			      #else
+			     <if test="${column.attrname} != null and ${column.attrname} !=''">
+			     #end 
+				${column.columnName}
+				</if>
+			   #{end}
+			  #end   
+        </trim>
+	<trim prefix="values (" suffix=")" suffixOverrides=",">
+				#foreach($column in $columns)
+			   #if ($velocityCount  < $columns.size()) 
+			      #if(${column.attrType} == 'Date')
+			        <if test="${column.attrname} != null">
+			      #else
+			        <if test="${column.attrname} != null and ${column.attrname} !=''">
+			      #end 
+				    #{${column.attrname},jdbcType=${column.dataType}},
+			        </if>
+			   #else
+                  #if(${column.attrType} == 'Date')
+			        <if test="${column.attrname} != null">
+			      #else
+			        <if test="${column.attrname} != null and ${column.attrname} !=''">
+			      #end 
+				#{${column.attrname},jdbcType=${column.dataType}}
+				 </if>
+			   #{end}
+			  #end   
+	</trim>
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="${package}.${moduleName}.entity.${className}Entity">
+		update ${tableName}
+		set 
+		#foreach($column in $columns)
+		   #if ($velocityCount  < $columns.size()) 
+			${column.columnName}=#{${column.attrname},jdbcType=${column.dataType}},
+		   #else
+			${column.columnName}=#{${column.attrname},jdbcType=${column.dataType}}
+		   #{end}
+		  #end  
+		where  ${pk.columnName} = #{${pk.attrname},jdbcType=${pk.dataType}}
+	</update>
+	<select id="selectByPrimaryKey" parameterType="java.lang.${pk.attrType}" resultMap="${className}VOMap">
+		select
+		<include refid="${className}EntityColumnList" />
+		<include refid="${className}VOColumnList" />
+		from ${tableName} a 
+		where ${pk.columnName} = #{${pk.attrname},jdbcType=${pk.dataType}}
 	</select>
-    
-    
-    
-    
-    
-
-
+	<select id="selectAll" resultMap="${className}VOMap">
+		select
+		<include refid="${className}EntityColumnList" />
+		<include refid="${className}VOColumnList" />
+		from ${tableName} a   where 1=1 
+		<include refid="${className}EntitySearchParam" />
+		<include refid="${className}VOSearchParam" />
+	</select>
+	<delete id="bathDelete" parameterType="${pk.attrType}[]">
+		delete from ${tableName} where 1>2
+         or ${pk.columnName}  in
+		<foreach collection="array" item="${pk.attrname}" index="no" open="("
+			separator="," close=")">
+			#{${pk.attrname}}
+		</foreach>
+	</delete>
+	<update id="updateByPrimaryKeySelective" parameterType="${package}.${moduleName}.entity.${className}Entity">
+    	update ${tableName}
+    <set>
+      		#foreach($column in $columns)
+			   #if ($velocityCount  < $columns.size()) 
+			   		#if(${column.attrType} == 'Date')
+				   		<if test="${column.attrname} != null ">
+				   		${column.columnName}=#{${column.attrname},jdbcType=${column.dataType}},
+				   		</if>
+				   	#else
+				   	    <if test="${column.attrname} != null and ${column.attrname} !=''">
+				        ${column.columnName}=#{${column.attrname},jdbcType=${column.dataType}},
+				        </if>
+			   		#end
+			   #else
+                   	#if(${column.attrType} == 'Date')
+				   		<if test="${column.attrname} != null ">
+				   		${column.columnName}=#{${column.attrname},jdbcType=${column.dataType}}
+				   		</if>
+				   	#else
+				   	    <if test="${column.attrname} != null and ${column.attrname} !=''">
+				        ${column.columnName}=#{${column.attrname},jdbcType=${column.dataType}}
+				        </if>
+			   		#end
+			   #end
+			  #end  
+    </set>
+    	where ${pk.columnName} = #{${pk.attrname},jdbcType=${pk.dataType}}
+   </update>
 </mapper>

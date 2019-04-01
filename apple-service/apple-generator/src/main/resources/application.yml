@@ -6,9 +6,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://112.35.59.158:3306/migu?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://39.106.136.45:3306/apple?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
     username: root
-    password: ZYqt@123
+    password: mysql
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss

@@ -5,7 +5,7 @@ public class ParameterVo<T> {
 	// 每页显示数
 	private int pageSize = 5;
 
-	private T parameter;
+	private T object;
 
 	public int getPageIndex() {
 		return pageIndex;
@@ -23,12 +23,12 @@ public class ParameterVo<T> {
 		this.pageSize = pageSize;
 	}
 
-	public T getParameter() {
-		return parameter;
+	public T getObject() {
+		return object;
 	}
 
-	public void setParameter(T parameter) {
-		this.parameter = parameter;
+	public void setObject(T object) {
+		this.object = object;
 	}
 
 }

@@ -1,8 +1,9 @@
 package ${package}.${moduleName}.dao;
 
-import ${package}.${moduleName}.entity.${className}Entity;
-import com.baomidou.mybatisplus.mapper.BaseMapper;
+import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
+import ${package}.${moduleName}.entity.${className}Entity;
+import ${package}.${moduleName}.vo.${className}VO;
 
 /**
  * ${comments}
@@ -12,7 +13,21 @@ import org.apache.ibatis.annotations.Mapper;
  * @date ${datetime}
  */
 @Mapper
-public interface ${className}Dao extends BaseMapper<${className}Entity> {
+public interface ${className}Dao {
      
-	List<${className}Entity> list (${className}Entity);
+
+	int deleteByPrimaryKey(${pk.attrType} ${pk.attrname});
+
+	int insert(${className}Entity ${classname}Entity);
+
+	int insertSelective(${className}Entity ${classname}Entity);
+	
+	int updateByPrimaryKey(${className}Entity ${classname}Entity);
+
+	${className}VO selectByPrimaryKey(${pk.attrType} ${pk.attrname});
+
+	List<${className}VO> selectAll(${className}VO ${classname}VO);
+
+	boolean bathDelete(${pk.attrType}[] ${pk.attrname}s);
+
 }

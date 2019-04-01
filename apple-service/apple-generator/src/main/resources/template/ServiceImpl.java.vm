@@ -1,29 +1,57 @@
 package ${package}.${moduleName}.service.impl;
 
-import org.springframework.stereotype.Service;
-import java.util.Map;
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.plugins.Page;
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import ${mainPath}.common.utils.PageUtils;
-import ${mainPath}.common.utils.Query;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import ${package}.${moduleName}.dao.${className}Dao;
 import ${package}.${moduleName}.entity.${className}Entity;
 import ${package}.${moduleName}.service.${className}Service;
+import ${package}.${moduleName}.vo.${className}VO;
+import com.yzy.apple.common.utils.ParameterVo;
 
 
 @Service("${classname}Service")
-public class ${className}ServiceImpl extends ServiceImpl<${className}Dao, ${className}Entity> implements ${className}Service {
+public class ${className}ServiceImpl implements ${className}Service {
 	
 	@Autowired
-    private ${className}Service ${classname}Service;
+    private ${className}Dao ${classname}Dao;
 
-    @Override
-    public PageInfo<${className}Entity> queryPage(ParameterVo<${className}Entity> parameterVo) {
-		PageHelper.startPage(parameterVo.getPageIndex(), parameterVo.getPageSize());
-		List<${className}Entity> list = staffInfoDao.list(parameterVo.getObject());
-		PageInfo<${className}Entity> page = new PageInfo<${className}Entity>(list);
-		return page;
-    }
+	@Override
+	public PageInfo<${className}VO> queryPage(ParameterVo<${className}VO> params) {
+		PageHelper.startPage(params.getPageIndex(), params.getPageSize());
+		List<${className}VO> list = ${classname}Dao.selectAll(params.getObject());
+		PageInfo<${className}VO> pageInfo = new PageInfo<${className}VO>(list);
+		return pageInfo;
+	}
+
+	@Override
+	public void insert(${className}Entity ${className}Entity) {
+		${classname}Dao.insertSelective(${className}Entity);
+	}
+
+	@Override
+	public void deleteBatch(${pk.attrType}[] ${pk.attrname}s) {
+		${classname}Dao.bathDelete(${pk.attrname}s);
+	}
+
+	@Override
+	public void updateById(${className}Entity ${className}Entity) {
+		${classname}Dao.updateByPrimaryKey(${className}Entity);
+
+	}
+
+	@Override
+	public ${className}VO selectById(${pk.attrType} ${pk.attrname}) {
+		return ${classname}Dao.selectByPrimaryKey(${pk.attrname});
+	}
+
+	@Override
+	public List<${className}VO> list(${className}VO ${classname}VO) {
+		return ${classname}Dao.selectAll(${classname}VO);
+	}
+
 }

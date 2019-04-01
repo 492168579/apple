@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yzy.apple.auth.dao.SysUserDao">
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.yzy.apple.auth.entity.SysUserEntity" id="SysUserEntityMap">
+        <result property="userId" jdbcType="BIGINT"  column="user_id"/>
+        <result property="username" jdbcType="VARCHAR"  column="username"/>
+        <result property="password" jdbcType="VARCHAR"  column="password"/>
+        <result property="salt" jdbcType="VARCHAR"  column="salt"/>
+        <result property="email" jdbcType="VARCHAR"  column="email"/>
+        <result property="mobile" jdbcType="VARCHAR"  column="mobile"/>
+        <result property="status" jdbcType="TINYINT"  column="status"/>
+        <result property="createUserId" jdbcType="BIGINT"  column="create_user_id"/>
+        <result property="createTime" jdbcType="TIMESTAMP"  column="create_time"/>
+    </resultMap>
+    	<resultMap extends="SysUserEntityMap" id="SysUserVOMap"  type="com.yzy.apple.auth.vo.SysUserVO">
+				      				      				      				      				      				      				      				      				      			</resultMap>
+    	<sql id="SysUserEntityColumnList">
+        a.user_id,
+           a.username,
+           a.password,
+           a.salt,
+           a.email,
+           a.mobile,
+           a.status,
+           a.create_user_id,
+           a.create_time
+   	</sql>
+	<sql id="SysUserVOColumnList">
+	 			 	  			 	  			 	  			 	  			 	  			 	  			 	  			 	  			 	  	</sql>
+    <sql id="SysUserEntitySearchParam">
+           	<if test="userId != null and userId !=''">
+			and a.user_id = #{userId}
+		</if>
+           	<if test="username != null and username !=''">
+			and a.username = #{username}
+		</if>
+           	<if test="password != null and password !=''">
+			and a.password = #{password}
+		</if>
+           	<if test="salt != null and salt !=''">
+			and a.salt = #{salt}
+		</if>
+           	<if test="email != null and email !=''">
+			and a.email = #{email}
+		</if>
+           	<if test="mobile != null and mobile !=''">
+			and a.mobile = #{mobile}
+		</if>
+           	<if test="status != null and status !=''">
+			and a.status = #{status}
+		</if>
+           	<if test="createUserId != null and createUserId !=''">
+			and a.create_user_id = #{createUserId}
+		</if>
+           	<if test="createTime != null and createTime !=''">
+			and a.create_time = #{createTime}
+		</if>
+            </sql>
+    <sql id="SysUserVOSearchParam">
+                                                                                                                                                                                                  <if test="createTimeStart !=null and createTimeStart !='' ">
+                  <![CDATA[ and a.create_time  >=  #{createTimeStart}  ]]>
+              </if>
+              <if test="createTimeEnd !=null and createTimeEnd !='' ">
+                  <![CDATA[ and a.create_time  <=  #{createTimeEnd}  ]]>
+              </if>
+		               </sql>
+    
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from
+		sys_user
+		where user_id  = #{userId,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" parameterType="com.yzy.apple.auth.entity.SysUserEntity">
+		insert into sys_user (
+		        user_id,
+             username,
+             password,
+             salt,
+             email,
+             mobile,
+             status,
+             create_user_id,
+             create_time
+     		)
+		values (
+        #{userId,jdbcType=BIGINT},
+             #{username,jdbcType=VARCHAR},
+             #{password,jdbcType=VARCHAR},
+             #{salt,jdbcType=VARCHAR},
+             #{email,jdbcType=VARCHAR},
+             #{mobile,jdbcType=VARCHAR},
+             #{status,jdbcType=TINYINT},
+             #{createUserId,jdbcType=BIGINT},
+              #{createTime,jdbcType=TIMESTAMP}
+     		)
+	</insert>
+    <insert id="insertSelective" parameterType="com.yzy.apple.auth.entity.SysUserEntity">
+		insert into sys_user
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+						   			      			     <if test="userId != null and userId !=''">
+			     				user_id,
+			</if>
+			   			  			   			      			     <if test="username != null and username !=''">
+			     				username,
+			</if>
+			   			  			   			      			     <if test="password != null and password !=''">
+			     				password,
+			</if>
+			   			  			   			      			     <if test="salt != null and salt !=''">
+			     				salt,
+			</if>
+			   			  			   			      			     <if test="email != null and email !=''">
+			     				email,
+			</if>
+			   			  			   			      			     <if test="mobile != null and mobile !=''">
+			     				mobile,
+			</if>
+			   			  			   			      			     <if test="status != null and status !=''">
+			     				status,
+			</if>
+			   			  			   			      			     <if test="createUserId != null and createUserId !=''">
+			     				create_user_id,
+			</if>
+			   			  			                    			     <if test="createTime != null">
+			      				create_time
+				</if>
+			   			          </trim>
+	<trim prefix="values (" suffix=")" suffixOverrides=",">
+							   			      			        <if test="userId != null and userId !=''">
+			      				    #{userId,jdbcType=BIGINT},
+			        </if>
+			   			  			   			      			        <if test="username != null and username !=''">
+			      				    #{username,jdbcType=VARCHAR},
+			        </if>
+			   			  			   			      			        <if test="password != null and password !=''">
+			      				    #{password,jdbcType=VARCHAR},
+			        </if>
+			   			  			   			      			        <if test="salt != null and salt !=''">
+			      				    #{salt,jdbcType=VARCHAR},
+			        </if>
+			   			  			   			      			        <if test="email != null and email !=''">
+			      				    #{email,jdbcType=VARCHAR},
+			        </if>
+			   			  			   			      			        <if test="mobile != null and mobile !=''">
+			      				    #{mobile,jdbcType=VARCHAR},
+			        </if>
+			   			  			   			      			        <if test="status != null and status !=''">
+			      				    #{status,jdbcType=TINYINT},
+			        </if>
+			   			  			   			      			        <if test="createUserId != null and createUserId !=''">
+			      				    #{createUserId,jdbcType=BIGINT},
+			        </if>
+			   			  			                     			        <if test="createTime != null">
+			      				#{createTime,jdbcType=TIMESTAMP}
+				 </if>
+			   			  	</trim>
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.yzy.apple.auth.entity.SysUserEntity">
+		update sys_user
+		set 
+				   			user_id=#{userId,jdbcType=BIGINT},
+		   		  		   			username=#{username,jdbcType=VARCHAR},
+		   		  		   			password=#{password,jdbcType=VARCHAR},
+		   		  		   			salt=#{salt,jdbcType=VARCHAR},
+		   		  		   			email=#{email,jdbcType=VARCHAR},
+		   		  		   			mobile=#{mobile,jdbcType=VARCHAR},
+		   		  		   			status=#{status,jdbcType=TINYINT},
+		   		  		   			create_user_id=#{createUserId,jdbcType=BIGINT},
+		   		  		   			create_time=#{createTime,jdbcType=TIMESTAMP}
+		   		  		where  user_id = #{userId,jdbcType=BIGINT}
+	</update>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="SysUserVOMap">
+		select
+		<include refid="SysUserEntityColumnList" />
+		<include refid="SysUserVOColumnList" />
+		from sys_user a 
+		where user_id = #{userId,jdbcType=BIGINT}
+	</select>
+	<select id="selectAll" resultMap="SysUserVOMap">
+		select
+		<include refid="SysUserEntityColumnList" />
+		<include refid="SysUserVOColumnList" />
+		from sys_user a   where 1=1 
+		<include refid="SysUserEntitySearchParam" />
+		<include refid="SysUserVOSearchParam" />
+	</select>
+	<delete id="bathDelete" parameterType="Long[]">
+		delete from sys_user where 1>2
+         or user_id  in
+		<foreach collection="array" item="userId" index="no" open="("
+			separator="," close=")">
+			#{userId}
+		</foreach>
+	</delete>
+	<update id="updateByPrimaryKeySelective" parameterType="com.yzy.apple.auth.entity.SysUserEntity">
+    	update sys_user
+    <set>
+      					   			   						   	    <if test="userId != null and userId !=''">
+				        user_id=#{userId,jdbcType=BIGINT},
+				        </if>
+			   					   			  			   			   						   	    <if test="username != null and username !=''">
+				        username=#{username,jdbcType=VARCHAR},
+				        </if>
+			   					   			  			   			   						   	    <if test="password != null and password !=''">
+				        password=#{password,jdbcType=VARCHAR},
+				        </if>
+			   					   			  			   			   						   	    <if test="salt != null and salt !=''">
+				        salt=#{salt,jdbcType=VARCHAR},
+				        </if>
+			   					   			  			   			   						   	    <if test="email != null and email !=''">
+				        email=#{email,jdbcType=VARCHAR},
+				        </if>
+			   					   			  			   			   						   	    <if test="mobile != null and mobile !=''">
+				        mobile=#{mobile,jdbcType=VARCHAR},
+				        </if>
+			   					   			  			   			   						   	    <if test="status != null and status !=''">
+				        status=#{status,jdbcType=TINYINT},
+				        </if>
+			   					   			  			   			   						   	    <if test="createUserId != null and createUserId !=''">
+				        create_user_id=#{createUserId,jdbcType=BIGINT},
+				        </if>
+			   					   			  			                      					   		<if test="createTime != null ">
+				   		create_time=#{createTime,jdbcType=TIMESTAMP}
+				   		</if>
+				   				   			      </set>
+    	where user_id = #{userId,jdbcType=BIGINT}
+   </update>
+</mapper>

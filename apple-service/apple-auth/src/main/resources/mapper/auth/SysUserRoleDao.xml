@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yzy.apple.auth.dao.SysUserRoleDao">
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.yzy.apple.auth.entity.SysUserRoleEntity" id="SysUserRoleEntityMap">
+        <result property="id" jdbcType="BIGINT"  column="id"/>
+        <result property="userId" jdbcType="BIGINT"  column="user_id"/>
+        <result property="roleId" jdbcType="BIGINT"  column="role_id"/>
+    </resultMap>
+    	<resultMap extends="SysUserRoleEntityMap" id="SysUserRoleVOMap"  type="com.yzy.apple.auth.vo.SysUserRoleVO">
+				      				      				      			</resultMap>
+    	<sql id="SysUserRoleEntityColumnList">
+        a.id,
+           a.user_id,
+           a.role_id
+   	</sql>
+	<sql id="SysUserRoleVOColumnList">
+	 			 	  			 	  			 	  	</sql>
+    <sql id="SysUserRoleEntitySearchParam">
+           	<if test="id != null and id !=''">
+			and a.id = #{id}
+		</if>
+           	<if test="userId != null and userId !=''">
+			and a.user_id = #{userId}
+		</if>
+           	<if test="roleId != null and roleId !=''">
+			and a.role_id = #{roleId}
+		</if>
+            </sql>
+    <sql id="SysUserRoleVOSearchParam">
+                                                                        </sql>
+    
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from
+		sys_user_role
+		where id  = #{id,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" parameterType="com.yzy.apple.auth.entity.SysUserRoleEntity">
+		insert into sys_user_role (
+		        id,
+             user_id,
+             role_id
+     		)
+		values (
+        #{id,jdbcType=BIGINT},
+             #{userId,jdbcType=BIGINT},
+              #{roleId,jdbcType=BIGINT}
+     		)
+	</insert>
+    <insert id="insertSelective" parameterType="com.yzy.apple.auth.entity.SysUserRoleEntity">
+		insert into sys_user_role
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+						   			      			     <if test="id != null and id !=''">
+			     				id,
+			</if>
+			   			  			   			      			     <if test="userId != null and userId !=''">
+			     				user_id,
+			</if>
+			   			  			                    			     <if test="roleId != null and roleId !=''">
+			     				role_id
+				</if>
+			   			          </trim>
+	<trim prefix="values (" suffix=")" suffixOverrides=",">
+							   			      			        <if test="id != null and id !=''">
+			      				    #{id,jdbcType=BIGINT},
+			        </if>
+			   			  			   			      			        <if test="userId != null and userId !=''">
+			      				    #{userId,jdbcType=BIGINT},
+			        </if>
+			   			  			                     			        <if test="roleId != null and roleId !=''">
+			      				#{roleId,jdbcType=BIGINT}
+				 </if>
+			   			  	</trim>
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.yzy.apple.auth.entity.SysUserRoleEntity">
+		update sys_user_role
+		set 
+				   			id=#{id,jdbcType=BIGINT},
+		   		  		   			user_id=#{userId,jdbcType=BIGINT},
+		   		  		   			role_id=#{roleId,jdbcType=BIGINT}
+		   		  		where  id = #{id,jdbcType=BIGINT}
+	</update>
+	<select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="SysUserRoleVOMap">
+		select
+		<include refid="SysUserRoleEntityColumnList" />
+		<include refid="SysUserRoleVOColumnList" />
+		from sys_user_role a 
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+	<select id="selectAll" resultMap="SysUserRoleVOMap">
+		select
+		<include refid="SysUserRoleEntityColumnList" />
+		<include refid="SysUserRoleVOColumnList" />
+		from sys_user_role a   where 1=1 
+		<include refid="SysUserRoleEntitySearchParam" />
+		<include refid="SysUserRoleVOSearchParam" />
+	</select>
+	<delete id="bathDelete" parameterType="Long[]">
+		delete from sys_user_role where 1>2
+         or id  in
+		<foreach collection="array" item="id" index="no" open="("
+			separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+	<update id="updateByPrimaryKeySelective" parameterType="com.yzy.apple.auth.entity.SysUserRoleEntity">
+    	update sys_user_role
+    <set>
+      					   			   						   	    <if test="id != null and id !=''">
+				        id=#{id,jdbcType=BIGINT},
+				        </if>
+			   					   			  			   			   						   	    <if test="userId != null and userId !=''">
+				        user_id=#{userId,jdbcType=BIGINT},
+				        </if>
+			   					   			  			                      					   	    <if test="roleId != null and roleId !=''">
+				        role_id=#{roleId,jdbcType=BIGINT}
+				        </if>
+			   					   			      </set>
+    	where id = #{id,jdbcType=BIGINT}
+   </update>
+</mapper>

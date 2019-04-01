@@ -1,10 +1,11 @@
 package ${package}.${moduleName}.service;
 
-import com.baomidou.mybatisplus.service.IService;
-import ${mainPath}.common.utils.PageUtils;
-import ${package}.${moduleName}.entity.${className}Entity;
+import java.util.List;
+
 import com.github.pagehelper.PageInfo;
-import java.util.Map;
+import ${package}.${moduleName}.entity.${className}Entity;
+import ${package}.${moduleName}.vo.${className}VO;
+import com.yzy.apple.common.utils.ParameterVo;
 
 /**
  * ${comments}
@@ -13,9 +14,19 @@ import java.util.Map;
  * @email ${email}
  * @date ${datetime}
  */
-public interface ${className}Service extends IService<${className}Entity> {
+public interface ${className}Service {
 
-    public PageInfo<${className}Entity> queryPage(ParameterVo<${className}Entity> parameterVo);
     
+	PageInfo<${className}VO> queryPage(ParameterVo<${className}VO> params);
+
+	void insert(${className}Entity ${classname}Entity);
+
+	void deleteBatch(${pk.attrType}[] ${pk.attrname}s);
+
+	${className}VO selectById(${pk.attrType} ${pk.attrname});
+
+	List<${className}VO> list(${className}VO ${classname}VO);
+    
+    void updateById(${className}Entity ${classname}Entity);
 }
 

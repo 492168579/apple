@@ -16,12 +16,12 @@ public class UserDetailsImpl implements UserDetails {
 	private String password;
 	private List<SimpleGrantedAuthority> authorities;
 
-	public UserDetailsImpl(SysUser user) {
+	public UserDetailsImpl(SysUserEntity user) {
 		this.username = user.getUsername();
 		this.password = user.getPassword();
 	}
 
-	public UserDetailsImpl(SysUser user, List<SimpleGrantedAuthority> authorities) {
+	public UserDetailsImpl(SysUserEntity user, List<SimpleGrantedAuthority> authorities) {
 		this.username = user.getUsername();
 		this.password = user.getPassword();
 		this.authorities = authorities;
@@ -44,22 +44,22 @@ public class UserDetailsImpl implements UserDetails {
 
 	@Override
 	public boolean isAccountNonExpired() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		return false;
+		return true ;
 	}
 
 }
