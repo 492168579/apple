@@ -1,7 +1,10 @@
 package com.yzy.apple.auth.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,12 +16,14 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.netflix.infix.lang.infix.antlr.EventFilterParser.regex_predicate_return;
 import com.yzy.apple.auth.dao.SysUserDao;
 import com.yzy.apple.auth.entity.SysUserEntity;
 import com.yzy.apple.auth.entity.UserDetailsImpl;
 import com.yzy.apple.auth.service.LoginService;
 import com.yzy.apple.auth.util.JwtTokenUtil;
 import com.yzy.apple.auth.vo.SysUserVO;
+import com.yzy.apple.common.utils.R;
 
 import io.jsonwebtoken.lang.Collections;
 @Service
@@ -52,13 +57,19 @@ public class LoginServiceImpl implements LoginService {
 	}
 
 	@Override
-	public String login(SysUserVO sysUserVO) {
+	public Map<String, Object> login(SysUserVO sysUserVO) {
+		if(StringUtils.isEmpty(sysUserVO.getUsername())||StringUtils.isEmpty(sysUserVO.getPassword())) {
+			throw new RuntimeException("请输入用户名密码!");
+		}
+		Map<String, Object> map = new HashMap<String, Object>();
 		UsernamePasswordAuthenticationToken upToken = new UsernamePasswordAuthenticationToken(sysUserVO.getUsername(), sysUserVO.getPassword());
 	    Authentication authentication = authenticationManager.authenticate(upToken);
 		SecurityContextHolder.getContext().setAuthentication(authentication);
 		UserDetails userDetails = userDetailsService.loadUserByUsername(sysUserVO.getUsername());
 		String token = jwtTokenUtil.generateToken(userDetails);
-		return token;
+		map.put("token", token);
+		map.put("user", userDetails);
+		return map ;
 	}
 
 }

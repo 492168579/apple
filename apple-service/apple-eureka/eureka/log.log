@@ -1,736 +1,106 @@
-2019-03-31 00:24:41.238  INFO 46801 --- [main] c.y.apple.eureka.AppleEurekaApplication  : No active profile set, falling back to default profiles: default
-2019-03-31 00:24:41.253  INFO 46801 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@34c01041: startup date [Sun Mar 31 00:24:41 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@399f45b1
-2019-03-31 00:24:42.117  INFO 46801 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=68ea1f48-de64-30bf-b28e-2e0edd48e977
-2019-03-31 00:24:42.136  INFO 46801 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2019-03-31 00:24:42.437  INFO 46801 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$63ead598] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-31 00:24:42.752  INFO 46801 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
-2019-03-31 00:24:42.779  INFO 46801 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-31 00:24:42.779  INFO 46801 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.35
-2019-03-31 00:24:42.787  INFO 46801 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/yezhaoyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-2019-03-31 00:24:42.883  INFO 46801 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/apple-eureka]  : Initializing Spring embedded WebApplicationContext
-2019-03-31 00:24:42.884  INFO 46801 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1631 ms
-2019-03-31 00:24:43.038  WARN 46801 --- [localhost-startStop-1] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-03-31 00:24:43.038  INFO 46801 --- [localhost-startStop-1] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-03-31 00:24:43.048  INFO 46801 --- [localhost-startStop-1] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@2dbb788a
-2019-03-31 00:24:43.842  INFO 46801 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-2019-03-31 00:24:43.843  INFO 46801 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
-2019-03-31 00:24:43.843  INFO 46801 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2019-03-31 00:24:43.843  INFO 46801 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2019-03-31 00:24:43.843  INFO 46801 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2019-03-31 00:24:43.844  INFO 46801 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
-2019-03-31 00:24:43.844  INFO 46801 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
-2019-03-31 00:24:43.844  INFO 46801 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'servletContainer' to urls: [/eureka/*]
-2019-03-31 00:24:43.844  INFO 46801 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
-2019-03-31 00:24:43.907  INFO 46801 --- [localhost-startStop-1] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
-2019-03-31 00:24:43.955  INFO 46801 --- [localhost-startStop-1] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-03-31 00:24:43.956  INFO 46801 --- [localhost-startStop-1] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-03-31 00:24:44.069  INFO 46801 --- [localhost-startStop-1] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-03-31 00:24:44.069  INFO 46801 --- [localhost-startStop-1] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-03-31 00:24:44.548  INFO 46801 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a916402, org.springframework.security.web.context.SecurityContextPersistenceFilter@316acbb5, org.springframework.security.web.header.HeaderWriterFilter@542f6803, org.springframework.security.web.csrf.CsrfFilter@76a805b7, org.springframework.security.web.authentication.logout.LogoutFilter@6dc1dc69, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f362135, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4e642ee1, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@53c1179a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@47311277, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2489e84a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a47a1e8, org.springframework.security.web.session.SessionManagementFilter@5807efad, org.springframework.security.web.access.ExceptionTranslationFilter@18a25bbd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31db34da]
-2019-03-31 00:24:44.596  WARN 46801 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-03-31 00:24:44.596  INFO 46801 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-03-31 00:24:44.664  INFO 46801 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-03-31 00:24:44.805  INFO 46801 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@34c01041: startup date [Sun Mar 31 00:24:41 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@399f45b1
-2019-03-31 00:24:44.867  INFO 46801 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2019-03-31 00:24:44.868  INFO 46801 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2019-03-31 00:24:44.873  INFO 46801 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String org.springframework.cloud.netflix.eureka.server.EurekaController.status(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
-2019-03-31 00:24:44.874  INFO 46801 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/lastn],methods=[GET]}" onto public java.lang.String org.springframework.cloud.netflix.eureka.server.EurekaController.lastn(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
-2019-03-31 00:24:44.904  INFO 46801 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-03-31 00:24:44.904  INFO 46801 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-03-31 00:24:45.240  INFO 46801 --- [main] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@34c01041: startup date [Sun Mar 31 00:24:41 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@399f45b1] and template loader path [classpath:/templates/]
-2019-03-31 00:24:45.241  INFO 46801 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
-2019-03-31 00:24:45.280  INFO 46801 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-03-31 00:24:45.287  INFO 46801 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
-2019-03-31 00:24:45.288  INFO 46801 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
-2019-03-31 00:24:45.289  INFO 46801 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2019-03-31 00:24:45.430  INFO 46801 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-03-31 00:24:45.455  INFO 46801 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-03-31 00:24:45.455  INFO 46801 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2019-03-31 00:24:45.463  INFO 46801 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1553963085462 with initial instances count: 0
-2019-03-31 00:24:45.503  INFO 46801 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2019-03-31 00:24:45.505  INFO 46801 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://user:passwd123@localhost:8002/eureka/]
-2019-03-31 00:24:45.670  INFO 46801 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-03-31 00:24:45.671  INFO 46801 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-03-31 00:24:45.671  INFO 46801 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-03-31 00:24:45.671  INFO 46801 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-03-31 00:24:45.908  INFO 46801 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://user:passwd123@localhost:8002/eureka/
-2019-03-31 00:24:45.915  INFO 46801 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2019-03-31 00:24:45.916  INFO 46801 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2019-03-31 00:24:45.950  INFO 46801 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2019-03-31 00:24:45.956  INFO 46801 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
-2019-03-31 00:24:45.957  INFO 46801 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
-2019-03-31 00:24:45.959  INFO 46801 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
-2019-03-31 00:24:45.961  INFO 46801 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
-2019-03-31 00:24:45.969  INFO 46801 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
-2019-03-31 00:24:45.975  INFO 46801 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=34c01041,type=ConfigurationPropertiesRebinder]
-2019-03-31 00:24:45.984  INFO 46801 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
-2019-03-31 00:24:45.987  INFO 46801 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application APPLE-EUREKA with eureka with status UP
-2019-03-31 00:24:45.990  INFO 46801 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
-2019-03-31 00:24:45.991  INFO 46801 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
-2019-03-31 00:24:45.991  INFO 46801 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
-2019-03-31 00:24:46.000  INFO 46801 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2019-03-31 00:24:46.000  INFO 46801 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2019-03-31 00:24:46.001  INFO 46801 --- [Thread-13] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2019-03-31 00:24:46.001  INFO 46801 --- [Thread-13] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2019-03-31 00:24:46.001  INFO 46801 --- [Thread-13] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2019-03-31 00:24:46.011  INFO 46801 --- [Thread-13] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2019-03-31 00:24:46.039  INFO 46801 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path '/apple-eureka'
-2019-03-31 00:24:46.040  INFO 46801 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8002
-2019-03-31 00:24:46.043  INFO 46801 --- [main] c.y.apple.eureka.AppleEurekaApplication  : Started AppleEurekaApplication in 5.656 seconds (JVM running for 6.044)
-2019-03-31 00:25:46.003  INFO 46801 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-03-31 00:26:46.005  INFO 46801 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 00:27:46.008  INFO 46801 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 00:28:46.009  INFO 46801 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 00:29:46.010  INFO 46801 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 00:30:46.009  INFO 46801 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-03-31 00:31:46.009  INFO 46801 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-03-31 00:31:48.324  INFO 46801 --- [http-nio-8002-exec-1] o.a.c.c.C.[.[localhost].[/apple-eureka]  : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2019-03-31 00:31:48.325  INFO 46801 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2019-03-31 00:31:48.348  INFO 46801 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 23 ms
-2019-03-31 00:31:48.914  INFO 46801 --- [http-nio-8002-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 00:31:49.521 ERROR 46801 --- [TaskBatchingWorker-target_localhost-4] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:31:49.522  WARN 46801 --- [TaskBatchingWorker-target_localhost-4] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-4 due to permanent error
-2019-03-31 00:32:19.183 ERROR 46801 --- [TaskBatchingWorker-target_localhost-4] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:32:19.188  WARN 46801 --- [TaskBatchingWorker-target_localhost-4] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-4 due to permanent error
-2019-03-31 00:32:46.010  INFO 46801 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 00:32:49.193 ERROR 46801 --- [TaskBatchingWorker-target_localhost-4] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:32:49.193  WARN 46801 --- [TaskBatchingWorker-target_localhost-4] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-4 due to permanent error
-2019-03-31 00:33:19.208 ERROR 46801 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:33:19.211  WARN 46801 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 00:33:46.012  INFO 46801 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 00:33:49.204 ERROR 46801 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:33:49.211  WARN 46801 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 00:34:19.222 ERROR 46801 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:34:19.222  WARN 46801 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 00:34:46.012  INFO 46801 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-03-31 00:34:49.219 ERROR 46801 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:34:49.220  WARN 46801 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 00:35:19.229 ERROR 46801 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:35:19.233  WARN 46801 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 00:35:25.456  INFO 46801 --- [Thread-15] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@34c01041: startup date [Sun Mar 31 00:24:41 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@399f45b1
-2019-03-31 00:35:25.457  INFO 46801 --- [Thread-15] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application APPLE-EUREKA with eureka with status DOWN
-2019-03-31 00:35:25.460  INFO 46801 --- [Thread-15] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
-2019-03-31 00:35:25.461  INFO 46801 --- [Thread-15] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2019-03-31 00:35:25.465  INFO 46801 --- [Thread-15] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2019-03-31 00:35:25.468  INFO 46801 --- [Thread-15] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-2019-03-31 00:35:25.469  INFO 46801 --- [Thread-15] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
-2019-03-31 00:35:25.482  INFO 46801 --- [Thread-15] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2019-03-31 00:35:25.482  INFO 46801 --- [Thread-15] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2019-03-31 00:38:45.951  INFO 46881 --- [main] c.y.apple.eureka.AppleEurekaApplication  : No active profile set, falling back to default profiles: default
-2019-03-31 00:38:45.966  INFO 46881 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@673be18f: startup date [Sun Mar 31 00:38:45 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@12468a38
-2019-03-31 00:38:46.818  INFO 46881 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=68ea1f48-de64-30bf-b28e-2e0edd48e977
-2019-03-31 00:38:46.835  INFO 46881 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
-2019-03-31 00:38:47.145  INFO 46881 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$61a5cd34] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-03-31 00:38:47.478  INFO 46881 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8002 (http)
-2019-03-31 00:38:47.503  INFO 46881 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-03-31 00:38:47.504  INFO 46881 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.35
-2019-03-31 00:38:47.512  INFO 46881 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/Users/yezhaoyi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
-2019-03-31 00:38:47.607  INFO 46881 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/apple-eureka]  : Initializing Spring embedded WebApplicationContext
-2019-03-31 00:38:47.608  INFO 46881 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1641 ms
-2019-03-31 00:38:47.773  WARN 46881 --- [localhost-startStop-1] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-03-31 00:38:47.773  INFO 46881 --- [localhost-startStop-1] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-03-31 00:38:47.785  INFO 46881 --- [localhost-startStop-1] c.netflix.config.DynamicPropertyFactory  : DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@cba9930
-2019-03-31 00:38:48.675  INFO 46881 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
-2019-03-31 00:38:48.679  INFO 46881 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webMvcMetricsFilter' to: [/*]
-2019-03-31 00:38:48.679  INFO 46881 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-2019-03-31 00:38:48.679  INFO 46881 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
-2019-03-31 00:38:48.679  INFO 46881 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
-2019-03-31 00:38:48.680  INFO 46881 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
-2019-03-31 00:38:48.680  INFO 46881 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpTraceFilter' to: [/*]
-2019-03-31 00:38:48.680  INFO 46881 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'servletContainer' to urls: [/eureka/*]
-2019-03-31 00:38:48.680  INFO 46881 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
-2019-03-31 00:38:48.753  INFO 46881 --- [localhost-startStop-1] c.s.j.s.i.a.WebApplicationImpl           : Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
-2019-03-31 00:38:48.810  INFO 46881 --- [localhost-startStop-1] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-03-31 00:38:48.811  INFO 46881 --- [localhost-startStop-1] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-03-31 00:38:48.931  INFO 46881 --- [localhost-startStop-1] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-03-31 00:38:48.932  INFO 46881 --- [localhost-startStop-1] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-03-31 00:38:49.453  INFO 46881 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4232b34a, org.springframework.security.web.context.SecurityContextPersistenceFilter@36baa049, org.springframework.security.web.header.HeaderWriterFilter@2f894ad9, org.springframework.security.web.csrf.CsrfFilter@67531e3a, org.springframework.security.web.authentication.logout.LogoutFilter@18a25bbd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@463561c5, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@57c00115, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2b2954e1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@34585ac9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c51782d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2da16263, org.springframework.security.web.session.SessionManagementFilter@6993c8df, org.springframework.security.web.access.ExceptionTranslationFilter@7fb53256, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@e38f0b7]
-2019-03-31 00:38:49.498  WARN 46881 --- [main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
-2019-03-31 00:38:49.498  INFO 46881 --- [main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
-2019-03-31 00:38:49.577  INFO 46881 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-03-31 00:38:49.723  INFO 46881 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@673be18f: startup date [Sun Mar 31 00:38:45 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@12468a38
-2019-03-31 00:38:49.791  INFO 46881 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-2019-03-31 00:38:49.792  INFO 46881 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2019-03-31 00:38:49.798  INFO 46881 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/],methods=[GET]}" onto public java.lang.String org.springframework.cloud.netflix.eureka.server.EurekaController.status(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
-2019-03-31 00:38:49.798  INFO 46881 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/lastn],methods=[GET]}" onto public java.lang.String org.springframework.cloud.netflix.eureka.server.EurekaController.lastn(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
-2019-03-31 00:38:49.848  INFO 46881 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-03-31 00:38:49.848  INFO 46881 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-2019-03-31 00:38:50.178  INFO 46881 --- [main] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@673be18f: startup date [Sun Mar 31 00:38:45 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@12468a38] and template loader path [classpath:/templates/]
-2019-03-31 00:38:50.179  INFO 46881 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
-2019-03-31 00:38:50.218  INFO 46881 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-03-31 00:38:50.227  INFO 46881 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/health],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
-2019-03-31 00:38:50.227  INFO 46881 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator/info],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler.handle(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.String>)
-2019-03-31 00:38:50.228  INFO 46881 --- [main] s.b.a.e.w.s.WebMvcEndpointHandlerMapping : Mapped "{[/actuator],methods=[GET],produces=[application/vnd.spring-boot.actuator.v2+json || application/json]}" onto protected java.util.Map<java.lang.String, java.util.Map<java.lang.String, org.springframework.boot.actuate.endpoint.web.Link>> org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping.links(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
-2019-03-31 00:38:50.380  INFO 46881 --- [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2019-03-31 00:38:50.403  INFO 46881 --- [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2019-03-31 00:38:50.403  INFO 46881 --- [main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2019-03-31 00:38:50.411  INFO 46881 --- [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1553963930410 with initial instances count: 0
-2019-03-31 00:38:50.464  INFO 46881 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2019-03-31 00:38:50.466  INFO 46881 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://user:passwd123@localhost:8002/eureka/]
-2019-03-31 00:38:50.814  INFO 46881 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2019-03-31 00:38:50.815  INFO 46881 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2019-03-31 00:38:50.815  INFO 46881 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2019-03-31 00:38:50.815  INFO 46881 --- [main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2019-03-31 00:38:50.904  INFO 46881 --- [main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://user:passwd123@localhost:8002/eureka/
-2019-03-31 00:38:50.911  INFO 46881 --- [main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2019-03-31 00:38:50.912  INFO 46881 --- [main] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2019-03-31 00:38:50.958  INFO 46881 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
-2019-03-31 00:38:50.968  INFO 46881 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'environmentManager' has been autodetected for JMX exposure
-2019-03-31 00:38:50.969  INFO 46881 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'refreshScope' has been autodetected for JMX exposure
-2019-03-31 00:38:50.971  INFO 46881 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
-2019-03-31 00:38:50.974  INFO 46881 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
-2019-03-31 00:38:50.980  INFO 46881 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
-2019-03-31 00:38:50.987  INFO 46881 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=673be18f,type=ConfigurationPropertiesRebinder]
-2019-03-31 00:38:50.996  INFO 46881 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
-2019-03-31 00:38:51.000  INFO 46881 --- [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application APPLE-EUREKA with eureka with status UP
-2019-03-31 00:38:51.003  INFO 46881 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : Setting the eureka configuration..
-2019-03-31 00:38:51.004  INFO 46881 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka data center value eureka.datacenter is not set, defaulting to default
-2019-03-31 00:38:51.005  INFO 46881 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka environment value eureka.environment is not set, defaulting to test
-2019-03-31 00:38:51.016  INFO 46881 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2019-03-31 00:38:51.016  INFO 46881 --- [Thread-13] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2019-03-31 00:38:51.016  INFO 46881 --- [Thread-13] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2019-03-31 00:38:51.016  INFO 46881 --- [Thread-13] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2019-03-31 00:38:51.016  INFO 46881 --- [Thread-13] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2019-03-31 00:38:51.027  INFO 46881 --- [Thread-13] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2019-03-31 00:38:51.057  INFO 46881 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8002 (http) with context path '/apple-eureka'
-2019-03-31 00:38:51.058  INFO 46881 --- [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8002
-2019-03-31 00:38:51.061  INFO 46881 --- [main] c.y.apple.eureka.AppleEurekaApplication  : Started AppleEurekaApplication in 6.141 seconds (JVM running for 6.506)
-2019-03-31 00:39:04.060  INFO 46881 --- [http-nio-8002-exec-1] o.a.c.c.C.[.[localhost].[/apple-eureka]  : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2019-03-31 00:39:04.061  INFO 46881 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
-2019-03-31 00:39:04.081  INFO 46881 --- [http-nio-8002-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
-2019-03-31 00:39:04.418  WARN 46881 --- [http-nio-8002-exec-2] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: APPLE-AUTH - yourdeshostname.lan:apple-auth:8003
-2019-03-31 00:39:04.418  WARN 46881 --- [http-nio-8002-exec-2] c.n.eureka.resources.InstanceResource    : Not Found (Renew): APPLE-AUTH - yourdeshostname.lan:apple-auth:8003
-2019-03-31 00:39:04.526  INFO 46881 --- [http-nio-8002-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 00:39:04.526  INFO 46881 --- [http-nio-8002-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 00:39:05.135 ERROR 46881 --- [TaskBatchingWorker-target_localhost-4] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:39:05.135  WARN 46881 --- [TaskBatchingWorker-target_localhost-4] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-4 due to permanent error
-2019-03-31 00:39:35.049 ERROR 46881 --- [TaskBatchingWorker-target_localhost-4] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:39:35.050  WARN 46881 --- [TaskBatchingWorker-target_localhost-4] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-4 due to permanent error
-2019-03-31 00:39:51.019  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2019-03-31 00:40:05.059 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:40:05.059  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 00:40:35.067 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:40:35.067  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 00:40:51.022  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 00:41:05.066 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:41:05.066  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 00:41:24.275  INFO 46881 --- [http-nio-8002-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status DOWN (replication=false)
-2019-03-31 00:41:24.780 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:41:24.781  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 00:41:27.300  INFO 46881 --- [http-nio-8002-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 (replication=false)
-2019-03-31 00:41:27.805 ERROR 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:41:27.806  WARN 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-10 due to permanent error
-2019-03-31 00:41:51.024  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 00:41:51.706  INFO 46881 --- [http-nio-8002-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 00:41:52.220 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:41:52.221  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 00:42:22.143 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:42:22.143  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 00:42:51.025  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 00:42:52.158 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:42:52.158  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 00:43:22.160 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:43:22.160  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 00:43:26.493  INFO 46881 --- [http-nio-8002-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status DOWN (replication=false)
-2019-03-31 00:43:27.003 ERROR 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:43:27.004  WARN 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-10 due to permanent error
-2019-03-31 00:43:29.518  INFO 46881 --- [http-nio-8002-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 (replication=false)
-2019-03-31 00:43:30.025 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:43:30.025  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 00:43:51.026  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 00:43:51.526  INFO 46881 --- [http-nio-8002-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 00:43:52.035 ERROR 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:43:52.035  WARN 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-10 due to permanent error
-2019-03-31 00:44:21.986 ERROR 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:44:21.987  WARN 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-10 due to permanent error
-2019-03-31 00:44:51.027  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 00:44:51.997 ERROR 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:44:51.998  WARN 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-10 due to permanent error
-2019-03-31 00:45:21.994 ERROR 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:45:21.995  WARN 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-10 due to permanent error
-2019-03-31 00:45:30.460  INFO 46881 --- [http-nio-8002-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status DOWN (replication=false)
-2019-03-31 00:45:30.964 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:45:30.964  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 00:45:33.478  INFO 46881 --- [http-nio-8002-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 (replication=false)
-2019-03-31 00:45:33.981 ERROR 46881 --- [TaskBatchingWorker-target_localhost-19] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:45:33.981  WARN 46881 --- [TaskBatchingWorker-target_localhost-19] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-19 due to permanent error
-2019-03-31 00:45:51.027  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-03-31 00:46:04.064  INFO 46881 --- [http-nio-8002-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 00:46:04.571 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:46:04.571  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 00:46:34.505 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:46:34.505  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 00:46:51.029  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 00:47:04.510 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:47:04.511  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 00:47:34.518 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:47:34.519  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 00:47:51.029  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-03-31 00:48:04.536 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:48:04.536  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 00:48:34.535 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:48:34.536  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 00:48:51.029  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 00:49:04.541 ERROR 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:49:04.541  WARN 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-10 due to permanent error
-2019-03-31 00:49:34.551 ERROR 46881 --- [TaskBatchingWorker-target_localhost-6] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:49:34.551  WARN 46881 --- [TaskBatchingWorker-target_localhost-6] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-6 due to permanent error
-2019-03-31 00:49:51.029  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-03-31 00:50:04.568 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:50:04.568  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 00:50:34.570 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:50:34.570  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 00:50:51.031  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 00:51:04.579 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:51:04.579  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 00:51:23.020  INFO 46881 --- [http-nio-8002-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status DOWN (replication=false)
-2019-03-31 00:51:23.531 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:51:23.531  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 00:51:26.044  INFO 46881 --- [http-nio-8002-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 (replication=false)
-2019-03-31 00:51:26.556 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:51:26.556  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 00:51:43.376  INFO 46881 --- [http-nio-8002-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 00:51:43.884 ERROR 46881 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:51:43.884  WARN 46881 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
-2019-03-31 00:51:51.032  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 00:52:13.804 ERROR 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:52:13.804  WARN 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 00:52:43.815 ERROR 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:52:43.818  WARN 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 00:52:51.032  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 00:53:13.824 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:53:13.824  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 00:53:43.836 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:53:43.836  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 00:53:50.911  INFO 46881 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
-2019-03-31 00:53:51.033  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 00:54:13.838 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:54:13.839  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 00:54:43.848 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:54:43.848  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 00:54:51.034  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 00:55:31.014  INFO 46881 --- [http-nio-8002-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 00:55:31.526 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:55:31.527  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 00:55:51.036  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 00:56:01.474 ERROR 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:56:01.475  WARN 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-17 due to permanent error
-2019-03-31 00:56:31.488 ERROR 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:56:31.488  WARN 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-17 due to permanent error
-2019-03-31 00:56:51.038  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 00:57:01.489 ERROR 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:57:01.489  WARN 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 00:57:31.495 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:57:31.495  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 00:57:51.040  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 00:58:01.501 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:58:01.501  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 00:58:31.512 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:58:31.512  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 00:58:51.040  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-03-31 00:59:11.573  INFO 46881 --- [http-nio-8002-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 00:59:12.089 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:59:12.089  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 00:59:42.038 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 00:59:42.040  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 00:59:51.041  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:00:12.037 ERROR 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:00:12.038  WARN 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-17 due to permanent error
-2019-03-31 01:00:42.043 ERROR 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:00:42.045  WARN 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 01:00:51.042  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 01:01:12.044 ERROR 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:01:12.044  WARN 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 01:01:42.052 ERROR 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:01:42.053  WARN 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 01:01:51.043  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 01:02:12.059 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:02:12.059  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 01:02:42.065 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:02:42.065  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 01:02:51.043  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:03:12.079 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:03:12.079  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 01:03:42.084 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:03:42.084  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:03:51.043  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:04:12.089 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:04:12.089  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:04:42.098 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:04:42.099  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:04:51.043  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:05:12.098 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:05:12.098  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:05:42.119 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:05:42.119  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 01:05:51.043  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-03-31 01:06:12.117 ERROR 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:06:12.117  WARN 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-5 due to permanent error
-2019-03-31 01:06:42.125 ERROR 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:06:42.125  WARN 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-5 due to permanent error
-2019-03-31 01:06:51.046  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 01:07:12.142 ERROR 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:07:12.142  WARN 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-5 due to permanent error
-2019-03-31 01:07:42.147 ERROR 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:07:42.147  WARN 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-17 due to permanent error
-2019-03-31 01:07:51.046  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:08:12.141 ERROR 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:08:12.141  WARN 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-17 due to permanent error
-2019-03-31 01:08:42.152 ERROR 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:08:42.152  WARN 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-17 due to permanent error
-2019-03-31 01:08:50.914  INFO 46881 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
-2019-03-31 01:08:51.047  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:09:12.158 ERROR 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:09:12.158  WARN 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 01:09:42.173 ERROR 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:09:42.174  WARN 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 01:09:51.048  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:10:12.167 ERROR 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:10:12.167  WARN 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 01:10:42.179 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:10:42.179  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 01:10:51.049  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:11:12.189 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:11:12.189  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 01:11:42.189 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:11:42.190  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 01:11:51.048  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-03-31 01:12:12.202 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:12:12.203  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 01:12:42.206 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:12:42.206  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 01:12:51.049  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:13:12.215 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:13:12.215  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 01:13:51.052  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 01:13:55.990  INFO 46881 --- [http-nio-8002-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 01:13:56.492 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:13:56.492  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 01:14:26.450 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:14:26.451  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:14:51.055  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 01:14:56.464 ERROR 46881 --- [TaskBatchingWorker-target_localhost-14] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:14:56.464  WARN 46881 --- [TaskBatchingWorker-target_localhost-14] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-14 due to permanent error
-2019-03-31 01:15:26.469 ERROR 46881 --- [TaskBatchingWorker-target_localhost-14] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:15:26.469  WARN 46881 --- [TaskBatchingWorker-target_localhost-14] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-14 due to permanent error
-2019-03-31 01:15:51.055  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:16:22.280  INFO 46881 --- [http-nio-8002-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 01:16:22.787 ERROR 46881 --- [TaskBatchingWorker-target_localhost-19] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:16:22.787  WARN 46881 --- [TaskBatchingWorker-target_localhost-19] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-19 due to permanent error
-2019-03-31 01:16:51.056  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:16:52.743 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:16:52.743  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 01:17:22.749 ERROR 46881 --- [TaskBatchingWorker-target_localhost-14] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:17:22.751  WARN 46881 --- [TaskBatchingWorker-target_localhost-14] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-14 due to permanent error
-2019-03-31 01:17:51.058  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 01:17:52.756 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:17:52.756  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 01:18:22.763 ERROR 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:18:22.765  WARN 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-5 due to permanent error
-2019-03-31 01:18:51.059  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:18:52.776 ERROR 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:18:52.776  WARN 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-5 due to permanent error
-2019-03-31 01:19:22.778 ERROR 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:19:22.778  WARN 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-5 due to permanent error
-2019-03-31 01:19:51.059  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:19:52.789 ERROR 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:19:52.790  WARN 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-17 due to permanent error
-2019-03-31 01:20:34.382  INFO 46881 --- [http-nio-8002-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 01:20:34.900 ERROR 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:20:34.900  WARN 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-17 due to permanent error
-2019-03-31 01:20:51.061  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 01:21:04.853 ERROR 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:21:04.853  WARN 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-17 due to permanent error
-2019-03-31 01:21:34.869 ERROR 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:21:34.870  WARN 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-17 due to permanent error
-2019-03-31 01:21:51.062  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:22:04.863 ERROR 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:22:04.864  WARN 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 01:22:34.876 ERROR 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:22:34.876  WARN 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 01:22:51.062  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-03-31 01:23:04.887 ERROR 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:23:04.887  WARN 46881 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
-2019-03-31 01:23:34.882 ERROR 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:23:34.882  WARN 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-10 due to permanent error
-2019-03-31 01:23:50.914  INFO 46881 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
-2019-03-31 01:23:51.062  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:24:04.888 ERROR 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:24:04.889  WARN 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-10 due to permanent error
-2019-03-31 01:24:34.898 ERROR 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:24:34.898  WARN 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-10 due to permanent error
-2019-03-31 01:24:51.062  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:25:04.912 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:25:04.912  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:25:23.117  INFO 46881 --- [http-nio-8002-exec-6] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status DOWN (replication=false)
-2019-03-31 01:25:23.625 ERROR 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:25:23.625  WARN 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-5 due to permanent error
-2019-03-31 01:25:46.824  INFO 46881 --- [http-nio-8002-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 01:25:47.335 ERROR 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:25:47.335  WARN 46881 --- [TaskBatchingWorker-target_localhost-17] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-17 due to permanent error
-2019-03-31 01:25:51.063  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:26:17.283 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:26:17.286  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 01:26:47.283 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:26:47.283  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 01:26:51.065  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 01:27:17.294 ERROR 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:27:17.294  WARN 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-10 due to permanent error
-2019-03-31 01:27:47.300 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:27:47.300  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:27:51.066  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:28:17.312 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:28:17.312  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:28:47.325 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:28:47.325  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 01:28:51.068  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 01:29:17.321 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:29:17.322  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 01:29:47.335 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:29:47.335  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 01:29:51.069  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:30:17.336 ERROR 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:30:17.337  WARN 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-5 due to permanent error
-2019-03-31 01:30:51.071  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:31:03.645  INFO 46881 --- [http-nio-8002-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 01:31:04.155 ERROR 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:31:04.155  WARN 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-5 due to permanent error
-2019-03-31 01:31:34.115 ERROR 46881 --- [TaskBatchingWorker-target_localhost-11] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:31:34.116  WARN 46881 --- [TaskBatchingWorker-target_localhost-11] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-11 due to permanent error
-2019-03-31 01:31:51.072  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:32:04.121 ERROR 46881 --- [TaskBatchingWorker-target_localhost-11] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:32:04.122  WARN 46881 --- [TaskBatchingWorker-target_localhost-11] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-11 due to permanent error
-2019-03-31 01:32:34.128 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:32:34.129  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 01:32:51.075  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 01:33:04.136 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:33:04.136  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 01:33:34.146 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:33:34.146  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 01:33:51.079  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 01:34:04.150 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:34:04.150  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:34:34.154 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:34:34.154  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:34:51.080  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:35:04.161 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:35:04.162  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:35:34.166 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:35:34.166  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 01:35:51.081  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:36:04.171 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:36:04.171  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 01:36:34.180 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:36:34.180  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 01:36:51.082  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:37:04.191 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:37:04.191  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 01:37:34.198 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:37:34.198  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 01:37:51.084  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 01:38:04.211 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:38:04.211  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 01:38:34.205 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:38:34.206  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 01:38:50.918  INFO 46881 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
-2019-03-31 01:38:51.085  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:39:04.218 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:39:04.221  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 01:39:34.220 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:39:34.220  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 01:39:51.085  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:40:04.232 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:40:04.232  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 01:40:34.234 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:40:34.234  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 01:40:51.085  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:41:04.241 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:41:04.241  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 01:41:34.253 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:41:34.253  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 01:41:51.085  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-03-31 01:42:04.253 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:42:04.253  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:42:34.259 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:42:34.259  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:42:51.086  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:43:04.268 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:43:04.268  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:43:34.268 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:43:34.268  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:43:51.087  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:44:04.282 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:44:04.282  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:44:34.285 ERROR 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:44:34.285  WARN 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-5 due to permanent error
-2019-03-31 01:44:51.087  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:45:04.296 ERROR 46881 --- [TaskBatchingWorker-target_localhost-7] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:45:04.296  WARN 46881 --- [TaskBatchingWorker-target_localhost-7] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-7 due to permanent error
-2019-03-31 01:45:21.733  INFO 46881 --- [http-nio-8002-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 01:45:22.246 ERROR 46881 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:45:22.246  WARN 46881 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
-2019-03-31 01:45:51.090  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 01:45:52.204 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:45:52.205  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 01:46:22.207 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:46:22.207  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 01:46:51.092  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 01:46:52.217 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:46:52.217  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 01:47:22.231 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:47:22.231  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 01:47:51.094  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:47:52.234 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:47:52.234  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 01:48:22.235 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:48:22.235  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 01:48:51.097  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 01:48:52.247 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:48:52.247  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 01:49:22.248 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:49:22.248  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 01:49:51.098  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:49:52.256 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:49:52.257  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 01:50:22.270 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:50:22.270  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:50:51.101  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 01:50:52.273 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:50:52.273  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:51:22.277 ERROR 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:51:22.277  WARN 46881 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
-2019-03-31 01:51:51.103  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 01:51:52.289 ERROR 46881 --- [TaskBatchingWorker-target_localhost-6] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:51:52.289  WARN 46881 --- [TaskBatchingWorker-target_localhost-6] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-6 due to permanent error
-2019-03-31 01:52:22.290 ERROR 46881 --- [TaskBatchingWorker-target_localhost-11] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:52:22.291  WARN 46881 --- [TaskBatchingWorker-target_localhost-11] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-11 due to permanent error
-2019-03-31 01:52:51.104  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:52:52.294 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:52:52.294  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 01:53:22.308 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:53:22.308  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 01:53:50.918  INFO 46881 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
-2019-03-31 01:53:51.107  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 01:53:52.311 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:53:52.311  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 01:54:22.315 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:54:22.315  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 01:54:50.659  INFO 46881 --- [http-nio-8002-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance APPLE-AUTH/yourdeshostname.lan:apple-auth:8003 with status UP (replication=false)
-2019-03-31 01:54:51.110  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 01:54:51.173 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:54:51.174  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 01:55:21.128 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:55:21.128  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 01:55:51.112  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:55:51.134 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:55:51.134  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 01:56:21.143 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:56:21.143  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 01:56:51.114  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 01:56:51.159 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:56:51.160  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:57:21.158 ERROR 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:57:21.158  WARN 46881 --- [TaskBatchingWorker-target_localhost-0] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-0 due to permanent error
-2019-03-31 01:57:51.115  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:57:51.167 ERROR 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:57:51.168  WARN 46881 --- [TaskBatchingWorker-target_localhost-5] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-5 due to permanent error
-2019-03-31 01:58:21.178 ERROR 46881 --- [TaskBatchingWorker-target_localhost-11] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:58:21.178  WARN 46881 --- [TaskBatchingWorker-target_localhost-11] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-11 due to permanent error
-2019-03-31 01:58:51.116  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 01:58:51.186 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:58:51.186  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 01:59:21.197 ERROR 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:59:21.197  WARN 46881 --- [TaskBatchingWorker-target_localhost-10] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-10 due to permanent error
-2019-03-31 01:59:51.118  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 01:59:51.203 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 01:59:51.203  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 02:00:21.208 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:00:21.208  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 02:00:51.118  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 02:00:51.215 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:00:51.215  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 02:01:21.230 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:01:21.230  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 02:01:51.119  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 02:01:51.234 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:01:51.234  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 02:02:21.235 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:02:21.236  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 02:02:51.121  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 02:02:51.235 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:02:51.235  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 02:03:21.258 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:03:21.259  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 02:03:51.122  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 02:03:51.257 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:03:51.257  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 02:04:21.266 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:04:21.266  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 02:04:51.122  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 02:04:51.266 ERROR 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:04:51.266  WARN 46881 --- [TaskBatchingWorker-target_localhost-18] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-18 due to permanent error
-2019-03-31 02:05:21.271 ERROR 46881 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:05:21.272  WARN 46881 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
-2019-03-31 02:05:51.125  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 02:05:51.278 ERROR 46881 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:05:51.278  WARN 46881 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
-2019-03-31 02:06:21.284 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:06:21.286  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 02:06:51.128  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 02:06:51.290 ERROR 46881 --- [TaskBatchingWorker-target_localhost-14] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:06:51.290  WARN 46881 --- [TaskBatchingWorker-target_localhost-14] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-14 due to permanent error
-2019-03-31 02:07:21.300 ERROR 46881 --- [TaskBatchingWorker-target_localhost-14] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:07:21.300  WARN 46881 --- [TaskBatchingWorker-target_localhost-14] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-14 due to permanent error
-2019-03-31 02:07:51.129  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 02:07:51.306 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:07:51.307  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 02:08:21.310 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:08:21.310  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 02:08:50.920  INFO 46881 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
-2019-03-31 02:08:51.128  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
-2019-03-31 02:08:51.317 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:08:51.317  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 02:09:21.323 ERROR 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:09:21.323  WARN 46881 --- [TaskBatchingWorker-target_localhost-9] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-9 due to permanent error
-2019-03-31 02:09:51.130  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 02:09:51.332 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:09:51.333  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 02:10:21.339 ERROR 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:10:21.339  WARN 46881 --- [TaskBatchingWorker-target_localhost-16] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-16 due to permanent error
-2019-03-31 02:10:51.131  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 02:10:51.346 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:10:51.346  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 02:11:21.362 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:11:21.363  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 02:11:51.134  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 02:11:51.361 ERROR 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:11:51.362  WARN 46881 --- [TaskBatchingWorker-target_localhost-15] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-15 due to permanent error
-2019-03-31 02:12:21.375 ERROR 46881 --- [TaskBatchingWorker-target_localhost-19] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:12:21.375  WARN 46881 --- [TaskBatchingWorker-target_localhost-19] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-19 due to permanent error
-2019-03-31 02:12:51.136  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 02:12:51.381 ERROR 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:12:51.381  WARN 46881 --- [TaskBatchingWorker-target_localhost-12] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-12 due to permanent error
-2019-03-31 02:13:21.389 ERROR 46881 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:13:21.390  WARN 46881 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
-2019-03-31 02:13:51.138  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
-2019-03-31 02:13:51.389 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:13:51.389  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 02:14:21.403 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:14:21.404  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 02:14:51.139  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 02:14:51.404 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:14:51.404  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 02:15:21.406 ERROR 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
-2019-03-31 02:15:21.408  WARN 46881 --- [TaskBatchingWorker-target_localhost-3] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-3 due to permanent error
-2019-03-31 02:15:51.139  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
-2019-03-31 02:16:51.141  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
-2019-03-31 02:17:51.145  INFO 46881 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 5ms
-2019-03-31 02:17:55.783  INFO 46881 --- [Thread-15] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@673be18f: startup date [Sun Mar 31 00:38:45 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@12468a38
-2019-03-31 02:17:55.785  INFO 46881 --- [Thread-15] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application APPLE-EUREKA with eureka with status DOWN
-2019-03-31 02:17:55.787  INFO 46881 --- [Thread-15] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
-2019-03-31 02:17:55.788  INFO 46881 --- [Thread-15] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2019-03-31 02:17:55.791  INFO 46881 --- [Thread-15] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2019-03-31 02:17:55.794  INFO 46881 --- [Thread-15] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
-2019-03-31 02:17:55.794  INFO 46881 --- [Thread-15] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
-2019-03-31 02:17:55.806  INFO 46881 --- [Thread-15] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2019-03-31 02:17:55.806  INFO 46881 --- [Thread-15] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2019-07-18 00:45:06.679 ERROR 5094 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 1 replication tasks
+2019-07-18 00:45:06.680  WARN 5094 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 1 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
+2019-07-18 08:15:01.545  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 23319ms
+2019-07-18 08:15:02.849 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 08:15:02.850  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:17:50.921 ERROR 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:17:50.921  WARN 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2019-07-18 09:18:18.082  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 8ms
+2019-07-18 09:18:19.599 ERROR 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:18:19.599  WARN 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2019-07-18 09:18:49.611 ERROR 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:18:49.611  WARN 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2019-07-18 09:19:18.083  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2019-07-18 09:19:19.621 ERROR 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:19:19.621  WARN 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2019-07-18 09:19:49.633 ERROR 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:19:49.633  WARN 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2019-07-18 09:20:18.085  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2019-07-18 09:20:19.640 ERROR 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:20:19.640  WARN 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2019-07-18 09:20:49.653 ERROR 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:20:49.654  WARN 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2019-07-18 09:21:18.085  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2019-07-18 09:21:19.661 ERROR 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:21:19.661  WARN 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2019-07-18 09:21:49.670 ERROR 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:21:49.671  WARN 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2019-07-18 09:22:18.086  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2019-07-18 09:22:19.670 ERROR 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:22:19.670  WARN 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2019-07-18 09:22:49.680 ERROR 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:22:49.680  WARN 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2019-07-18 09:23:18.087  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2019-07-18 09:23:19.691 ERROR 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:23:19.691  WARN 5094 --- [TaskBatchingWorker-target_localhost-1] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-1 due to permanent error
+2019-07-18 09:23:49.690 ERROR 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:23:49.690  WARN 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2019-07-18 09:24:18.088  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2019-07-18 09:24:19.696 ERROR 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:24:19.697  WARN 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2019-07-18 09:24:49.707 ERROR 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:24:49.707  WARN 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2019-07-18 09:25:18.088  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2019-07-18 09:25:19.711 ERROR 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:25:19.711  WARN 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2019-07-18 09:25:49.723 ERROR 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:25:49.724  WARN 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2019-07-18 09:26:18.088  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2019-07-18 09:26:19.732 ERROR 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:26:19.732  WARN 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2019-07-18 09:26:49.743 ERROR 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:26:49.744  WARN 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2019-07-18 09:26:54.592  INFO 5094 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 5
+2019-07-18 09:27:18.089  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2019-07-18 09:27:19.742 ERROR 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:27:19.743  WARN 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2019-07-18 09:27:49.754 ERROR 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:27:49.754  WARN 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2019-07-18 09:28:18.090  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2019-07-18 09:28:19.768 ERROR 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:28:19.769  WARN 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2019-07-18 09:28:49.773 ERROR 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:28:49.773  WARN 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2019-07-18 09:29:18.091  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2019-07-18 09:29:19.774 ERROR 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:29:19.775  WARN 5094 --- [TaskBatchingWorker-target_localhost-8] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-8 due to permanent error
+2019-07-18 09:29:49.775 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:29:49.775  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:30:18.093  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2019-07-18 09:30:19.791 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:30:19.791  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:30:49.791 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:30:49.791  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:31:18.093  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2019-07-18 09:31:19.806 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:31:19.806  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:31:49.811 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:31:49.811  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:32:18.094  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2019-07-18 09:32:19.818 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:32:19.819  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:32:49.834 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:32:49.834  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:33:18.683  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2019-07-18 09:33:20.423 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:33:20.423  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:33:50.435 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:33:50.435  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:34:18.683  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 2ms
+2019-07-18 09:34:20.438 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:34:20.439  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:34:50.452 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:34:50.452  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:35:18.683  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2019-07-18 09:35:20.455 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:35:20.455  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:35:50.473 ERROR 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:35:50.473  WARN 5094 --- [TaskBatchingWorker-target_localhost-13] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-13 due to permanent error
+2019-07-18 09:36:18.686  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2019-07-18 09:36:20.477 ERROR 5094 --- [TaskBatchingWorker-target_localhost-7] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:36:20.477  WARN 5094 --- [TaskBatchingWorker-target_localhost-7] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-7 due to permanent error
+2019-07-18 09:36:50.477 ERROR 5094 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:36:50.477  WARN 5094 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error
+2019-07-18 09:37:18.688  INFO 5094 --- [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 3ms
+2019-07-18 09:37:20.485 ERROR 5094 --- [TaskBatchingWorker-target_localhost-2] c.n.e.cluster.ReplicationTaskProcessor   : Batch update failure with HTTP status code 404; discarding 2 replication tasks
+2019-07-18 09:37:20.485  WARN 5094 --- [TaskBatchingWorker-target_localhost-2] c.n.eureka.util.batcher.TaskExecutors    : Discarding 2 tasks of TaskBatchingWorker-target_localhost-2 due to permanent error

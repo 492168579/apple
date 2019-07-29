@@ -1,19 +1,22 @@
 server:
   port: 8001
-#  servlet:
-#   context-path: /apple-service   添加context-path 不起作用，后期学习解决
 spring:
   security:
     oauth2:
       client:
         client-id: acme
         client-secret: secret
-      
-          
   application:
     name: apple-gateway
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+            - GET
+            - POST
       discovery:
         locator:
           enabled: false

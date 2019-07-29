@@ -1,5 +1,7 @@
 package com.yzy.apple.auth.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,8 +24,8 @@ public class LoginController {
 	@PostMapping(value = "/login")
 	public R login(@RequestBody SysUserVO sysUserVO) {
 		try {
-			String token = loginService.login(sysUserVO);
-			return R.ok().put("token", token);
+			Map<String, Object> data = loginService.login(sysUserVO);
+			return R.ok(data);
 		}catch (Exception e) {
 			e.printStackTrace();
 			return R.error(e.getMessage());
