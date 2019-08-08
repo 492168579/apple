@@ -169,11 +169,20 @@
           </header>
         <!--左侧导航-->
            <aside class="main-sidebar">
-            <!-- Sidebar Menu -->
-            <!-- Sidebar Menu -->
-            <ul class="sidebar-menu" data-widget="tree">
+              <ul class="sidebar-menu" data-widget="tree">
                 <li class="treeview">
-                  <a href="/dashboard" target="menuFrame"  ><span>仪表盘</span></a>
+                  <a href="#"><i class="fa fa-link"></i> <span>权限管理</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                      </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="/user"   target="menuFrame"  >用户管理</a></li>
+                    <li><a href="/user"   target="menuFrame"  >部门管理</a></li>
+                    <li><a href="/login"   target="menuFrame" >角色管理</a></li>
+                    <li><a href="/chat"   target="menuFrame"  >聊天</a></li>
+                  </ul>
+                </li>
               </ul>
               <ul class="sidebar-menu" data-widget="tree">
                 <li class="treeview">
